@@ -1,4 +1,5 @@
-import { Outlet } from "react-router";
+import AddTask from "../components/AddTask";
+import TaskLayout from "../components/TaskLayout";
 import useAuth from "../hooks/useAuth";
 import AuthModal from "../modals/AuthModal";
 import Footer from "./../components/Footer";
@@ -10,7 +11,9 @@ const Home = () => {
       {user ? (
         <>
           <Navbar />
-          <Outlet />
+          <AddTask />
+          {/* Task layout */}
+          <TaskLayout />
           <Footer />
         </>
       ) : (
