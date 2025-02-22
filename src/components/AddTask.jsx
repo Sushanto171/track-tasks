@@ -40,50 +40,42 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-4">
+    <form onSubmit={handleSubmit} className=" mx-auto my-5">
       <fieldset className="fieldset w-full bg-base-200 border border-base-300 p-4 rounded-box">
-        <div className="flex flex-col gap-4">
-          {/* Title Input */}
+        <div className="flex flex-wrap gap-2 ">
           <input
             type="text"
             name="title"
             value={task.title}
             onChange={handleChange}
             maxLength={50}
-            className="input input-bordered w-full"
-            placeholder="Task Title (Max 50 chars)"
+            className="input input-bordered w-1/4 min-w-[150px]"
+            placeholder="Title"
             required
           />
-
-          {/* Description Input */}
           <textarea
             name="description"
             value={task.description}
             onChange={handleChange}
             maxLength={200}
-            className="textarea textarea-bordered w-full"
-            placeholder="Task Description (Optional, Max 200 chars)"
+            className="textarea textarea-bordered w-1/4 min-w-[150px]"
+            placeholder="Description"
           />
-
-          {/* Category Select */}
           <select
             name="category"
             value={task.category}
             onChange={handleChange}
-            className="select select-bordered w-full"
+            className="select select-bordered w-1/4 min-w-[150px]"
           >
             <option value="to-do">To-Do</option>
             <option value="in-progress">In Progress</option>
             <option value="done">Done</option>
           </select>
-
-          {/* Submit Button */}
           <button
             type="submit"
             className="btn btn-primary flex items-center gap-2"
           >
-            <AiOutlinePlusCircle className="text-lg" />
-            Save Task
+            <AiOutlinePlusCircle className="text-lg" /> Save
           </button>
         </div>
       </fieldset>

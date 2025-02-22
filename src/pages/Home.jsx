@@ -19,22 +19,24 @@ const Home = () => {
     );
   }
   return (
-    <Container>
-      {user ? (
-        <>
-          <Navbar />
-          <AddTask />
-          {/* Task layout */}
-          <TaskLayout socket={socket} />
-          {/* <KanbanBoard /> */}
-          <Footer />
-        </>
-      ) : (
-        <>
-          <AuthModal user={user} />
-        </>
-      )}
-    </Container>
+    <div className="relative">
+      <Navbar />
+      <Container>
+        {user ? (
+          <>
+            <AddTask />
+            {/* Task layout */}
+            <TaskLayout socket={socket} />
+            {/* <KanbanBoard /> */}
+            <Footer />
+          </>
+        ) : (
+          <>
+            <AuthModal user={user} />
+          </>
+        )}
+      </Container>
+    </div>
   );
 };
 
