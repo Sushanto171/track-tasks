@@ -14,7 +14,7 @@ const useTasks = () => {
   } = useQuery({
     queryKey: [user?.email, "tasks"],
     queryFn: async () => {
-      const { data } = await axiosInstance(`/tasks/${user?.email}`);
+      const { data } = await axiosInstance(`/tasks`);
       return data?.data || [];
     },
   });

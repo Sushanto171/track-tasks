@@ -16,6 +16,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [notifications, setNotifications] = useState([]);
 
   // observer
   useEffect(() => {
@@ -56,6 +57,8 @@ const AuthProvider = ({ children }) => {
     loginWithGithub,
     loginWithGoogle,
     userSignOut,
+    notifications,
+    setNotifications,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

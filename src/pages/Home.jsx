@@ -1,4 +1,5 @@
 import { ImSpinner3 } from "react-icons/im";
+import { io } from "socket.io-client";
 import AddTask from "../components/AddTask";
 import Container from "../components/Container";
 import TaskLayout from "../components/TaskLayout";
@@ -6,6 +7,7 @@ import useAuth from "../hooks/useAuth";
 import AuthModal from "../modals/AuthModal";
 import Footer from "./../components/Footer";
 import Navbar from "./../components/Navbar";
+const socket = io(import.meta.env.VITE_SEVER_URL);
 const Home = () => {
   const { user, loading } = useAuth();
 
@@ -23,8 +25,8 @@ const Home = () => {
           <Navbar />
           <AddTask />
           {/* Task layout */}
-          <TaskLayout />
-          {/* <TaskBoard /> */}
+          <TaskLayout socket={socket} />
+          {/* <KanbanBoard /> */}
           <Footer />
         </>
       ) : (
